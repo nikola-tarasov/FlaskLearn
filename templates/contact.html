@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+{{super()}}
+
+<form action="/contact" method="post">
+    <p>имя</p> <input type="text", name="first-name">
+    <p>фамилия</p> <input type="text", name="second-name">
+    <p>телефон</p> <input type="number" name="number" id="">
+    <button type="submit" >Отправить</button>    
+</form>
+
+{%for msg in get_flashed_messages()%}
+     <div> {{msg}} </div>
+{%endfor%}
+<div class="content"><h2>Hello world!</h2></div>
+
+{%endblock%}

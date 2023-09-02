@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+{{super()}}
+
+<form action="/artiqul" method="post">
+    <p>Тема</p> <input type="text", name="title">
+    <p>Текст</p> <input type="text", name="text">
+    <button type="submit" >Отправить</button>    
+</form>
+
+{% for i in post%}
+<h1>Статья</h1><p>{{i.title}}</p>
+<h2>Текст</h2><p>{{i.text}}</p>
+{%endfor%}
+
+{%endblock%}
